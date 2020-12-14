@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <link rel = "stylesheet" href="library.css">
+    </head>
+
+    <body>
+        <button class = "newBookButton">New Book</button>
+
+        <div class="form-popup" id="myForm">
+            <form class="form-container">
+                <h1>Add New Book</h1>
+ 
+                <input type="text" placeholder="Title" name="title" required>
+                <input type="text" placeholder="Author"  name="author" required>
+                <input type="text" placeholder="No. of Pages" name="numberOfPages" required>
+
+                <input type="checkbox" id="haveRead" name="haveRead">
+                <label for="haveRead">Have Read</label>
+            
+                <button type="button" class="submitButton">Submit</button>
+                <button type="button" class="closeButton">Close</button>
+            </form>
+        </div>
+    </body>
+    <script src = "library.js"></script>
+</html>

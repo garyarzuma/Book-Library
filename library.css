@@ -1,0 +1,10 @@
+#myForm{
+    display:none;
+    position: fixed;
+    z-index: 1;
+    background-color: rgb(163, 163, 163);
+}
+
+body{
+    z-index:0;
+}
