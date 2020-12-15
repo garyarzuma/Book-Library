@@ -1,10 +1,42 @@
 #myForm{
     display:none;
-    position: fixed; 
+    position: fixed;
+    
     top:200px;
+    transform: translate(-50%, 0);
+    left: 50%;
+    width: 400px;
+    height: 380px;
     z-index: 1;
-    background-color: rgb(163, 163, 163);
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    border: solid 5px;
+    border-radius: 15px;
 }
+
+.form-container{
+    margin: 0 auto;
+    justify-content:space-around;
+    display: flex;
+    flex-direction: column;
+    width: 340px;
+    height: 340px;
+    align-items:center;
+}
+
+#checkbox-container{
+
+}
+
+input{
+    font-size:18px;
+}
+
+button{
+    width: 5em;
+    font-size:22px;
+}
+
 h1{
     text-align: center;
     font-family: URW Chancery L, cursive;
@@ -16,7 +48,8 @@ h1{
 }
 
 .newBookButton{
-   font-size:20px;
+   font-size:26px;
+   width: 7em;
    padding:10px;
    background-color: rgb(161, 161, 161);
    border-radius: 15px;

@@ -55,7 +55,6 @@ function createBookCard(myBook){
             myDivNode.textContent += " pages";
         }
     }
-    
 }
 
 function handleFormInput(e){
