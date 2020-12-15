@@ -25,8 +25,14 @@
 }
 
 .x-button{
-    position: relative;
-    transform: translate(-88px, -13px)
+    position: absolute;
+    transform: translate(-109px, -145px);
+    transition: all .2s ease-in;
+}
+
+.x-button:hover{
+    transform: scale(1.03) translate(-105px, -141px); 
+    position: absolute;
 }
 
 input{
@@ -34,8 +40,13 @@ input{
 }
 
 button{
-    width: 5em;
+    width: 120px;
     font-size:22px;
+    
+}
+
+.read-book:hover, .not-read-book:hover{
+    border: 3px solid black;
 }
 
 h1{
@@ -50,12 +61,14 @@ h1{
 
 .read-book{
     color: green;
-    height: 1.8em;
+    height: 50px;
+    border-radius:25px;
 }
 
 .not-read-book{
     color: red;
-    height: 1.8em;
+    height: 50px;
+    border-radius:25px;
 }
 
 .newBookButton{
@@ -81,14 +94,16 @@ body{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    margin: 0 auto;
+    justify-content: left;
 }
 
 .bookCard{
     background-color:#f2eecb;
     margin:10px;
     padding:10px;
-    width: 190px;
-    height: 240px;
+    width: 230px;
+    height: 300px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.2s;
     text-align: center;
@@ -98,6 +113,7 @@ body{
     flex-direction: column;
     border: solid 3px;
     border-radius: 18px;
+    position: relative;
 }
 
 .bookCard:hover {
@@ -106,13 +122,16 @@ body{
 
 .title {
     margin-bottom:10px;
-    word-wrap: break-word;
+    margin-top:10px;
+    overflow-wrap: break-word;
     font-weight: bold;
+    max-width: 100%;
     
 }
 
 .author {
     margin-bottom:10px;
-    word-wrap: break-word;
+    overflow-wrap: break-word;
     font-style: italic;
+    max-width: 100%;
 }
