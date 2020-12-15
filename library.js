@@ -3,7 +3,21 @@ document.querySelector('.newBookButton').addEventListener('click', newBookPopUp)
 document.querySelector('.closeButton').addEventListener('click', closePopUp); 
 document.querySelector('.submitButton').addEventListener('click', handleFormInput); 
 
+
+
 let myLibrary = [];
+
+//Sample books
+addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, "on");
+addBookToLibrary("Harry Potter", "JK Rowling", 490, "on");
+addBookToLibrary("Dune", "Hamilton", 990, "off");
+addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, "on");
+addBookToLibrary("Harry Potter", "JK Rowling", 490, "on");
+addBookToLibrary("Dune", "Hamilton", 990, "off");addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, "on");
+addBookToLibrary("Harry Potter", "JK Rowling", 490, "on");
+addBookToLibrary("Dune", "Hamilton", 990, "off");
+
+displayCurrentBooks();
 
 //book object definition
 function Book(title, author, numOfPages, haveRead){
@@ -22,23 +36,13 @@ function addBookToLibrary(title, author, numOfPages, haveRead){
     myLibrary.push(myBook);
 }
 
-//Sample books
-addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, "on");
-addBookToLibrary("Harry Potter", "JK Rowling", 490, "on");
-addBookToLibrary("Dune", "Hamilton", 990, "off");
-addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, "on");
-addBookToLibrary("Harry Potter", "JK Rowling", 490, "on");
-addBookToLibrary("Dune", "Hamilton", 990, "off");addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, "on");
-addBookToLibrary("Harry Potter", "JK Rowling", 490, "on");
-addBookToLibrary("Dune", "Hamilton", 990, "off");
-
 function displayCurrentBooks(){
     myLibrary.forEach(element => createBookCard(element));
 }
 
 function createBookCard(myBook){
     //creates Card div and sets up the data-array attribute to hold the location of the book in the myLibrary array
-    myCardNode = document.createElement('div');
+    const myCardNode = document.createElement('div');
     myCardNode.className = "bookCard";
     myCardNode.setAttribute('data-array', myLibrary.indexOf(myBook)); //sets data-array attribute for each book to the index it is in the myLibrary array;
     document.querySelector(".cardContainer").appendChild(myCardNode);
@@ -54,7 +58,19 @@ function createBookCard(myBook){
         if (prop === "numOfPages"){
             myDivNode.textContent += " pages";
         }
+        if (prop === "haveRead"){
+            let myButtonNode = document.createElement('button');
+            myButtonNode.className = (myBook[prop] === "on") ? "read-book" : "not-read-book";
+            myButtonNode.textContent = (myBook[prop] === "on") ? "✓ Read" : "X Read";
+            document.querySelector(`[data-array="${myLibrary.indexOf(myBook)}"]`).appendChild(myButtonNode);
+            myButtonNode.addEventListener("click", toggleRead);
+        }
     }
+}
+
+function toggleRead(e){
+    e.target.textContent = (e.target.className === "read-book") ? "X Read" : "✓ Read";
+    e.target.className = (e.target.className === "read-book") ? "not-read-book" : "read-book";
 }
 
 function handleFormInput(e){
@@ -80,4 +96,4 @@ function closePopUp(){
     document.getElementById("myForm").style.display = "none";
 }
 
-displayCurrentBooks();
+
