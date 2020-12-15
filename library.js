@@ -69,8 +69,14 @@ function createBookCard(myBook){
 }
 
 function toggleRead(e){
+    //toggle the visuals of the button of the book card
     e.target.textContent = (e.target.className === "read-book") ? "X Read" : "✓ Read";
     e.target.className = (e.target.className === "read-book") ? "not-read-book" : "read-book";
+
+    //toggle whether the book in the library is read or not
+    const bookIndex = e.target.parentElement.getAttribute('data-array'); 
+    myLibrary[bookIndex].haveRead = (myLibrary[bookIndex].haveRead === "on" ) ? "off" : "on";
+    console.log(myLibrary[bookIndex]);
 }
 
 function handleFormInput(e){
