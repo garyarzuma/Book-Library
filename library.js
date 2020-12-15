@@ -46,7 +46,10 @@ function createBookCard(myBook){
     myCardNode.className = "bookCard";
     myCardNode.setAttribute('data-array', myLibrary.indexOf(myBook)); //sets data-array attribute for each book to the index it is in the myLibrary array;
     document.querySelector(".cardContainer").appendChild(myCardNode);
-   
+
+    //adds the x button to corder of card
+    addXButton(myCardNode);
+    
     //creates Divs for the title, author, pages;
     for(prop in myBook){
         let myDivNode = document.createElement('div');
@@ -68,6 +71,19 @@ function createBookCard(myBook){
     }
 }
 
+function addXButton(myCardNode){
+    const myImg = document.createElement('img');
+    myImg.src = "xbutton.png";
+    myImg.className = "x-button";
+    myCardNode.appendChild(myImg);
+
+    myImg.addEventListener("click", removeBook);
+}
+
+function removeBook(e){
+    //
+}
+
 function toggleRead(e){
     //toggle the visuals of the button of the book card
     e.target.textContent = (e.target.className === "read-book") ? "X Read" : "✓ Read";
@@ -76,7 +92,6 @@ function toggleRead(e){
     //toggle whether the book in the library is read or not
     const bookIndex = e.target.parentElement.getAttribute('data-array'); 
     myLibrary[bookIndex].haveRead = (myLibrary[bookIndex].haveRead === "on" ) ? "off" : "on";
-    console.log(myLibrary[bookIndex]);
 }
 
 function handleFormInput(e){

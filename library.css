@@ -24,6 +24,10 @@
     align-items:center;
 }
 
+.x-button{
+    position: fixed;
+    transform: translate(-90px, -115px)
+}
 
 input{
     font-size:18px;
@@ -46,10 +50,12 @@ h1{
 
 .read-book{
     color: green;
+    height: 1.8em;
 }
 
 .not-read-book{
     color: red;
+    height: 1.8em;
 }
 
 .newBookButton{
