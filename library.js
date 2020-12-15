@@ -81,7 +81,7 @@ function addXButton(myCardNode){
 }
 
 function removeBook(e){
-    //
+    document.querySelector('.cardContainer').removeChild(e.target.parentElement);
 }
 
 function toggleRead(e){

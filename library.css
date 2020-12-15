@@ -25,8 +25,8 @@
 }
 
 .x-button{
-    position: fixed;
-    transform: translate(-90px, -115px)
+    position: relative;
+    transform: translate(-88px, -13px)
 }
 
 input{
