@@ -3,19 +3,11 @@ document.querySelector('.newBookButton').addEventListener('click', newBookPopUp)
 document.querySelector('.closeButton').addEventListener('click', closePopUp); 
 document.querySelector('.submitButton').addEventListener('click', handleFormInput); 
 
-
-
 let myLibrary = [];
 
 //Sample books
 addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, "on");
-addBookToLibrary("Harry Potter", "JK Rowling", 490, "on");
-addBookToLibrary("Dune", "Hamilton", 990, "off");
-addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, "on");
-addBookToLibrary("Harry Potter", "JK Rowling", 490, "on");
-addBookToLibrary("Dune", "Hamilton", 990, "off");addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, "on");
-addBookToLibrary("Harry Potter", "JK Rowling", 490, "on");
-addBookToLibrary("Dune", "Hamilton", 990, "off");
+addBookToLibrary("Harry Potter and the Chamber of Secrets", "JK Rowling", 390, "off");
 
 displayCurrentBooks();
 
@@ -81,7 +73,24 @@ function addXButton(myCardNode){
 }
 
 function removeBook(e){
+    const bookToRemove  = myLibrary[e.target.parentElement.dataset.array];
+    let j = 0;
+
+    //actually removes the object from myLibrary
+    for (let i = 0; i < myLibrary.length; i++) {
+       if (myLibrary[i] !== bookToRemove) {
+           myLibrary[j] = myLibrary[i];
+           document.querySelector(`[data-array="${i}"]`).setAttribute('data-array', j);
+           j++;
+        }
+    }
+
+    //removes just the card from showing
     document.querySelector('.cardContainer').removeChild(e.target.parentElement);
+    
+    myLibrary.pop();
+    
+    console.table(myLibrary);
 }
 
 function toggleRead(e){
@@ -104,6 +113,7 @@ function handleFormInput(e){
     )
 
     closePopUp();
+    clearForm(myForm);
     createBookCard(myLibrary[myLibrary.length-1]); //Creates book card for the book we just added to array which would be the last one, hence length - 1;
 }
 
@@ -115,6 +125,15 @@ function newBookPopUp(){
 //close new book addition menu popup without submitting
 function closePopUp(){
     document.getElementById("myForm").style.display = "none";
+}
+
+//clears the stuff you entered into the form if you submitted it
+function clearForm(myForm){
+    console.log(myForm.title.value);
+    myForm.title.value = "";
+    myForm.author.value= "";
+    myForm.numberOfPages.value = "";
+    myForm.haveRead.value = "off";
 }
 
 
