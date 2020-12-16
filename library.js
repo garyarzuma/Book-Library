@@ -17,10 +17,6 @@ function Book(title, author, numOfPages, haveRead){
     this.author = author;
     this.numOfPages = numOfPages;
     this.haveRead = haveRead;
-    this.info = function(){
-        const infoText = `${title} by ${author}, ${numOfPages} pages, ${haveRead === "on" ? "have read":"not read yet"}`
-        return infoText;
-    }
 }
 
 function addBookToLibrary(title, author, numOfPages, haveRead){
@@ -78,9 +74,9 @@ function removeBook(e){
 
     //actually removes the object from myLibrary
     for (let i = 0; i < myLibrary.length; i++) {
-       if (myLibrary[i] !== bookToRemove) {
+       if (myLibrary[i] !== bookToRemove) { //removes the object from myLibrary and shifts other books down 1 index. 
            myLibrary[j] = myLibrary[i];
-           document.querySelector(`[data-array="${i}"]`).setAttribute('data-array', j);
+           document.querySelector(`[data-array="${i}"]`).setAttribute('data-array', j);//updates Div values so they still correspond to the index of myLibrary
            j++;
         }
     }
@@ -88,9 +84,7 @@ function removeBook(e){
     //removes just the card from showing
     document.querySelector('.cardContainer').removeChild(e.target.parentElement);
     
-    myLibrary.pop();
-    
-    console.table(myLibrary);
+    myLibrary.pop(); //remove last element from array because it will end up repeating the last element twice
 }
 
 function toggleRead(e){
@@ -129,11 +123,9 @@ function closePopUp(){
 
 //clears the stuff you entered into the form if you submitted it
 function clearForm(myForm){
-    console.log(myForm.title.value);
     myForm.title.value = "";
     myForm.author.value= "";
     myForm.numberOfPages.value = "";
     myForm.haveRead.value = "off";
 }
-
 
