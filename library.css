@@ -1,137 +1,140 @@
-#myForm{
-    display:none;
-    position: fixed;
-    
-    top:200px;
-    transform: translate(-50%, 0);
-    left: 50%;
-    width: 400px;
-    height: 380px;
-    z-index: 1;
-    background-color: rgb(255, 255, 255);
-    text-align: center;
-    border: solid 5px;
-    border-radius: 15px;
+#myForm {
+  display: none;
+  position: fixed;
+
+  top: 200px;
+  transform: translate(-50%, 0);
+  left: 50%;
+  width: 400px;
+  height: 380px;
+  z-index: 1;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  border: solid 5px;
+  border-radius: 15px;
 }
 
-.form-container{
-    margin: 0 auto;
-    justify-content:space-around;
-    display: flex;
-    flex-direction: column;
-    width: 340px;
-    height: 340px;
-    align-items:center;
+.form-container {
+  margin: 0 auto;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+  height: 340px;
+  align-items: center;
 }
 
-.x-button{
-    position: absolute;
-    transform: translate(-109px, -145px);
-    transition: all .2s ease-in;
+.x-button {
+  position: absolute;
+  transform: translate(-109px, -145px);
+  transition: all 0.2s ease-in;
 }
 
-.x-button:hover{
-    transform: scale(1.03) translate(-105px, -141px); 
-    position: absolute;
+.x-button:hover {
+  transform: scale(1.03) translate(-105px, -141px);
+  position: absolute;
 }
 
-input{
-    font-size:18px;
+input {
+  font-size: 18px;
 }
 
-button{
-    width: 140px;
-    font-size:22px;
-    
+button {
+  width: 140px;
+  font-size: 22px;
 }
 
-.read-book:hover, .not-read-book:hover{
-    border: 3px solid black;
+.read-book:hover,
+.not-read-book:hover {
+  border: 3px solid black;
 }
 
-h1{
-    text-align: center;
-    font-family: URW Chancery L, cursive;
+h1 {
+  text-align: center;
+  font-family: URW Chancery L, cursive;
 }
 
-#buttonContainer{
-    display:flex;
-    justify-content:center;
+#buttonContainer {
+  display: flex;
+  justify-content: center;
 }
 
-.read-book{
-    color: green;
-    height: 50px;
-    border-radius:25px;
+.read-book {
+  color: green;
+  height: 50px;
+  border-radius: 25px;
 }
 
-.not-read-book{
-    color: red;
-    height: 50px;
-    border-radius:25px;
+.not-read-book {
+  color: red;
+  height: 50px;
+  border-radius: 25px;
 }
 
-.newBookButton{
-   font-size:26px;
-   width: 7em;
-   padding:10px;
-   background-color: rgb(161, 161, 161);
-   border-radius: 15px;
-   margin-bottom:20px;
+.newBookButton {
+  font-size: 26px;
+  width: 7em;
+  padding: 10px;
+  background-color: rgb(161, 161, 161);
+  border-radius: 15px;
+  margin-bottom: 20px;
 }
 
-.newBookButton:hover{
-    background-color: gray;
+.newBookButton:hover {
+  background-color: gray;
 }
 
-body{
-    z-index:0;
-    background-color: #536895;
-    font-size:25px;
+body {
+  z-index: 0;
+  background-color: #536895;
+  font-size: 25px;
 }
 
-.cardContainer{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: 0 auto;
-    justify-content: left;
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: left;
 }
 
-.bookCard{
-    background-color:#f2eecb;
-    margin:10px;
-    padding:10px;
-    width: 230px;
-    height: 300px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.2s;
-    text-align: center;
-    align-items: center;
-    display:flex;
-    justify-content:space-around;
-    flex-direction: column;
-    border: solid 3px;
-    border-radius: 18px;
-    position: relative;
+.bookCard {
+  background-color: #f2eecb;
+  margin: 10px;
+  padding: 10px;
+  width: 230px;
+  height: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  border: solid 3px;
+  border-radius: 18px;
+  position: relative;
 }
 
 .bookCard:hover {
-    box-shadow: 0 12px 19px 0 rgba(0,0,0,0.5);
+  box-shadow: 0 12px 19px 0 rgba(0, 0, 0, 0.5);
 }
 
 .title {
-    margin-bottom:10px;
-    margin-top:10px;
-    overflow-wrap: break-word;
-    font-weight: bold;
-    max-width: 100%;
-    
+  margin-bottom: 10px;
+  margin-top: 10px;
+  overflow-wrap: break-word;
+  font-weight: bold;
+  max-width: 100%;
 }
 
 .author {
-    margin-bottom:10px;
-    overflow-wrap: break-word;
-    font-style: italic;
-    max-width: 100%;
+  margin-bottom: 10px;
+  overflow-wrap: break-word;
+  font-style: italic;
+  max-width: 100%;
+}
+
+input:invalid {
+  box-shadow: 0 0 2px 1px red;
 }

@@ -1,32 +1,51 @@
 <html>
-    <head>
-        <link rel = "stylesheet" href="library.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-    </head>
+  <head>
+    <link rel="stylesheet" href="library.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
 
-    <body>
-        <h1>Book Library</h1>
-        <div id=buttonContainer>
-            <button class = "newBookButton">+ New Book</button>
-        </div>  
-        <div class="cardContainer">
+  <body>
+    <h1>Book Library</h1>
+    <div id="buttonContainer">
+      <button type="button" class="newBookButton">+ New Book</button>
+    </div>
+    <div class="cardContainer"></div>
+    <div class="form-popup" id="myForm">
+      <form class="form-container">
+        <h2>Add New Book</h2>
+
+        <input
+          type="text"
+          placeholder="Title"
+          name="title"
+          required
+          size="30"
+          maxlength="60"
+        />
+        <input
+          type="text"
+          placeholder="Author"
+          name="author"
+          size="30"
+          maxlength="40"
+          required
+        />
+        <input
+          type="text"
+          placeholder="No. of Pages"
+          name="numberOfPages"
+          size="15"
+          maxlength="7"
+          required
+        />
+        <div class="checkbox-container">
+          <input type="checkbox" id="haveRead" name="haveRead" />
+          <label for="haveRead">Have Read</label>
         </div>
-        <div class="form-popup" id="myForm">
-            <form class="form-container">
-                <h2>Add New Book</h2>
- 
-                <input type="text" placeholder="Title" name="title" size = "30" maxlength = "60" required>
-                <input type="text" placeholder="Author"  name="author" size = "30" maxlength = "40" required>
-                <input type="text" placeholder="No. of Pages" name="numberOfPages" size = "15" maxlength = "7" required>
-                <div class = "checkbox-container">
-                    <input type="checkbox" id="haveRead" name="haveRead">
-                    <label for="haveRead">Have Read</label>
-                </div>
-                <button type="button" class="submitButton">Submit</button>
-                <button type="button" class="closeButton">Close</button>
-            </form>
-        </div>
-        <script src = "library.js"></script>
-    </body>
+        <button class="submitButton">Submit</button>
+        <button type="button" class="closeButton">Close</button>
+      </form>
+    </div>
+    <script src="library.js"></script>
+  </body>
 </html>
